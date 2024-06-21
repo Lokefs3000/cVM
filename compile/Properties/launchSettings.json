@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "compile": {
+      "commandName": "Project",
+      "commandLineArgs": "-f bios.c -o .\\",
+      "workingDirectory": "C:\\Users\\Loke\\source\\repos\\cVM\\bios"
+    }
+  }
+}

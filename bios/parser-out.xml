@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ParserRoot>
+  <Body>
+    <vdriver_startup>
+      <Arguments />
+      <Body>
+        <Variable0 Type="Int" Ptr="False" Value="0" />
+        <Assembly1>
+          <SourceBlock0 Source="&quot;in {ignored_var}, VDR_Startup&quot;" />
+        </Assembly1>
+      </Body>
+    </vdriver_startup>
+    <vdriver_kill>
+      <Arguments />
+      <Body>
+        <Variable0 Type="Int" Ptr="False" Value="0" />
+        <Assembly1>
+          <SourceBlock0 Source="&quot;in {ignored_var}, VDR_Kill&quot;" />
+        </Assembly1>
+      </Body>
+    </vdriver_kill>
+    <vdriver_flush>
+      <Arguments />
+      <Body>
+        <Variable0 Type="Int" Ptr="False" Value="0" />
+        <Assembly1>
+          <SourceBlock0 Source="&quot;in {ignored_var}, VDR_Flush&quot;" />
+        </Assembly1>
+      </Body>
+    </vdriver_flush>
+    <Variable3 Type="Int" Ptr="False" Value="0" />
+    <Assembly4>
+      <SourceBlock0 Source="&quot;mov $GPU_ARG_MEM0, {width}&quot;" />
+      <SourceBlock1 Source="&quot;mov $GPU_ARG_MEM1, {height}&quot;" />
+      <SourceBlock2 Source="&quot;mov $GPU_ARG_MEM2, {format}&quot;" />
+      <SourceBlock3 Source="&quot;in R0, VDR_CreateFramebuffer&quot;" />
+      <SourceBlock4 Source="&quot;mov {result}, R0&quot;" />
+    </Assembly4>
+    <vdriver_define_framebuffer>
+      <Arguments>
+        <Argument0 Name="id" Type="Int" Ptr="False" />
+      </Arguments>
+      <Body>
+        <Assembly0>
+          <SourceBlock0 Source="&quot;mov R0, {id}&quot;" />
+          <SourceBlock1 Source="&quot;out VDR_DefineFramebuffer, R0&quot;" />
+        </Assembly0>
+      </Body>
+    </vdriver_define_framebuffer>
+    <vdriver_clear>
+      <Arguments>
+        <Argument0 Name="color" Type="Int" Ptr="False" />
+      </Arguments>
+      <Body>
+        <Assembly0>
+          <SourceBlock0 Source="&quot;mov R0, {color}&quot;" />
+          <SourceBlock1 Source="&quot;out VDR_Clear, R0&quot;" />
+        </Assembly0>
+      </Body>
+    </vdriver_clear>
+    <main>
+      <Arguments />
+      <Body />
+    </main>
+  </Body>
+</ParserRoot>

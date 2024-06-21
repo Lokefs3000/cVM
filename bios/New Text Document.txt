@@ -1,0 +1,107 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void vdriver_startup()
+{
+	int ignored_var = 0;
+	__asm__
+	{
+		"in {ignored_var}, VDR_Startup"
+	}
+}
+
+void vdriver_kill()
+{
+	int ignored_var = 0;
+	__asm__
+	{
+		"in {ignored_var}, VDR_Kill"
+	}
+}
+
+void vdriver_flush()
+{
+	int ignored_var = 0;
+	__asm__
+	{
+		"in {ignored_var}, VDR_Flush"
+	}
+}
+
+int vdriver_create_framebuffer(int width, int height, int format)
+{
+	int result = 0;
+	__asm__
+	{
+		"mov $GPU_ARG_MEM0, {width}"
+		"mov $GPU_ARG_MEM1, {height}"
+		"mov $GPU_ARG_MEM2, {format}"
+		"in R0, VDR_CreateFramebuffer"
+		"mov {result}, R0"
+	}
+	return result;
+}
+
+void vdriver_define_framebuffer(int id)
+{
+	__asm__
+	{
+		"mov R0, {id}"
+		"out VDR_DefineFramebuffer, R0"
+	}
+}
+
+void vdriver_clear(int color)
+{
+	__asm__
+	{
+		"mov R0, {color}"
+		"out VDR_Clear, R0"
+	}
+}
+
+#endif
+
+//Show startup screen
+
+
+void startup();
+
+void titlecard();
+#endif
+
+void main()
+{
+	startup();
+
+	titlecard();
+#endif
+}
+
+void startup()
+{
+	vdriver_startup();
+}
+
+
+void titlecard()
+{
+	
+}
+#endif
